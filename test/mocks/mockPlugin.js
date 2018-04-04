@@ -4,13 +4,14 @@ const debug = require('debug')('ilp:mock-plugin')
 const IldcpHelper = require('../helpers/ildcp')
 
 class MockPlugin extends EventEmitter2 {
-  constructor () {
+  constructor (opts) {
     super()
-
+    this.opts = opts
     this._handler = null
   }
 
   connect () {
+    this.isConnected = () => true
     return Promise.resolve(null)
   }
 

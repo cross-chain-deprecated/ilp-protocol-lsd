@@ -1,7 +1,6 @@
 const fetch = require('node-fetch')
-const PluginBtp = require('ilp-plugin-btp')
 
-async function getPluginFromUrl(lsdUrl) {
+async function getPluginFromUrl(lsdUrl, PluginBtp) {
   const request = await fetch(lsdUrl)
   const obj = await request.json()
   if (obj.protocol !== 'BTP/2.0') {

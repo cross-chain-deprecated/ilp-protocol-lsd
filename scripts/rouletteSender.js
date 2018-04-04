@@ -14,7 +14,7 @@ const INITIAL_OPTIMISM = 2.5
   console.log('connecting pluginOut')
   await pluginOut.connect()
   console.log('Discovering and setting up loopback connection from http://localhost:8914/')
-  const pluginIn = await LSD.getPluginFromUrl('http://localhost:8914/')
+  const pluginIn = await LSD.getPluginFromUrl('http://localhost:8914/', PluginBtp)
   console.log('connected plugins')
   const loop = await LT.createLoop({ pluginOut, pluginIn })
   let cummSeen = 0

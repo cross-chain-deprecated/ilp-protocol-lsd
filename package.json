@@ -50,6 +50,7 @@
     "jsdoc-to-markdown": "^3.0.4",
     "md-toc-filter": "^0.9.0",
     "mocha": "^4.0.1",
+    "mock-require": "^3.0.2",
     "nock": "^9.0.2",
     "nyc": "^11.4.1",
     "sinon": "^4.1.3",
