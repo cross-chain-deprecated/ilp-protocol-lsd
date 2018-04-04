@@ -11,18 +11,18 @@ Example of an `application/lsd+json` document:
 
 For a demo of how Alice can create a loopback connection to Bob, run:
 ```sh
-git clone https://github.com/interledgerjs/ilp-protocol-lt
-cd ilp-protocol-lt
+git clone https://github.com/interledgerjs/ilp-protocol-lsd
+cd ilp-protocol-lsd
 npm install
 npm run test
 node scripts/rouletteReceiver.js
 
 # in a second window:
 curl -v http://localhost:8914/
-cd ilp-protocol-lt
+cd ilp-protocol-lsd
 node scripts/rouletteConnector.js
 
 # in a third window:
-cd ilp-protocol-lt
+cd ilp-protocol-lsd
 node scripts/rouletteSender.js
 ```
