@@ -30,7 +30,9 @@ async function run (btpPort, lsdPort) {
   const lsdServer = http.createServer((req, res) => {
     const token = crypto.randomBytes(16).toString('hex')
     res.writeHead(200, { 'content-type': 'application/json+lsd' })
-    res.end(LSD.generateLsdDocument(`btp+ws://:${token}@localhost:${BTP_PORT}/`))
+    const lsdDoc = LSD.generateLsdDocument(`btp+ws://:${token}@localhost:${BTP_PORT}/`)
+    res.end(lsdDoc)
+    console.log('Generated LSD document', lsdDoc)
   })
   lsdServer.listen(LSD_PORT)
   console.log(`Listening for LSD on port ${lsdPort}`)

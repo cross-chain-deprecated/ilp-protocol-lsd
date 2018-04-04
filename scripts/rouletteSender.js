@@ -11,11 +11,10 @@ const INITIAL_OPTIMISM = 2.5
 
 ;(async function test () {
   const pluginOut = new PluginBtp({ server: 'btp+ws://:pluginIn@localhost:8912/' })
-  const pluginIn = await LSD.getPluginFromUrl('http://localhost:8914/')
-  console.log('connecting plugin 2')
-  await pluginIn.connect()
-  console.log('connecting plugin 1')
+  console.log('connecting pluginOut')
   await pluginOut.connect()
+  console.log('Discovering and setting up loopback connection from http://localhost:8914/')
+  const pluginIn = await LSD.getPluginFromUrl('http://localhost:8914/')
   console.log('connected plugins')
   const loop = await LT.createLoop({ pluginOut, pluginIn })
   let cummSeen = 0
